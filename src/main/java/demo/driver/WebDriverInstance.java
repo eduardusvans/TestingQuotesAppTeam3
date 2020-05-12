@@ -1,4 +1,4 @@
-package demo.webdriver;
+package demo.driver;
 
 public class WebDriverInstance {
 }
