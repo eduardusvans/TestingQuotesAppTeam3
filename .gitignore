@@ -2,4 +2,4 @@
 build
 /.gradle
 .idea
-src/main/java/demo/driver/
+src/main/java/demo/driver
