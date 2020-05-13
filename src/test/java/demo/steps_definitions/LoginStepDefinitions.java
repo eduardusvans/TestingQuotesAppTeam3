@@ -1,4 +1,4 @@
-package step_definitions;
+package demo.steps_definitions;
 
 import demo.pages.LoginPage;
 import io.cucumber.java.en.Given;
