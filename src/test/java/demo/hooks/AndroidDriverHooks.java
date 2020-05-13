@@ -16,6 +16,9 @@ public class AndroidDriverHooks {
     }
 
     @After(value = "@Android")
-    public void quitWebdriver(Scenario scenario){if (scenario.isFailed()){scenario.embed(((TakesScreenshot) AndroidDriverInstance.androidDriver).getScreenshotAs(OutputType.BYTES), "image/png");scenario.write("Scenario Fail");}AndroidDriverInstance.quit();}
+    public void quitWebdriver(Scenario scenario){
+        if (scenario.isFailed()){scenario.embed(((TakesScreenshot)
+                AndroidDriverInstance.androidDriver).getScreenshotAs(OutputType.BYTES), "image/png");
+        scenario.write("Scenario Fail");}AndroidDriverInstance.quit();}
 
 }

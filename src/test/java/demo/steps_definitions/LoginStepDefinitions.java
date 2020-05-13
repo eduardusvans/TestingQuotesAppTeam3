@@ -10,7 +10,7 @@ public class LoginStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
 
-    @Given("User is on Quotes App login page")
+    @Given("User is on QUOTES login page")
     public void userIsOnQuotesAppLoginPage() {
         boolean status = loginPage.isOnPage();
         Assert.assertTrue(status);
