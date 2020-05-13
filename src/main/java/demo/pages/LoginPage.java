@@ -37,6 +37,8 @@ public class LoginPage {
         AndroidElement button = AndroidDriverInstance
                 .androidDriver
                 .findElement(By.id("btn_login"));
+
+        button.click();
     }
 
 }
