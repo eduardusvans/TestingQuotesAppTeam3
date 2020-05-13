@@ -14,7 +14,7 @@ public class LoginStepDefinitions {
     NavBar navBar = new NavBar();
     HomePage homePage = new HomePage();
 
-    @Given("User is on QUOTES login page")
+    @Given("User is on Quotes App login page")
     public void userIsOnQuotesAppLoginPage() {
         boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
