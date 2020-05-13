@@ -33,7 +33,7 @@ public class LoginStepDefinitions {
 
     @Then("User is on home page")
     public void userIsOnHomePage() {
-        boolean result = true; // Change this after home page is available
-        Assert.assertTrue(result);
+        boolean status = true; // Change this after home page is available
+        Assert.assertTrue(status);
     }
 }
