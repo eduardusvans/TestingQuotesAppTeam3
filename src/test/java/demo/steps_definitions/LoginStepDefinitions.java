@@ -1,6 +1,8 @@
 package demo.steps_definitions;
 
+import demo.pages.HomePage;
 import demo.pages.LoginPage;
+import demo.pages.NavBar;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,11 +11,13 @@ import org.junit.Assert;
 public class LoginStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
+    NavBar navBar = new NavBar();
+    HomePage homePage = new HomePage();
 
     @Given("User is on QUOTES login page")
     public void userIsOnQuotesAppLoginPage() {
-        boolean status = loginPage.isOnPage();
-        Assert.assertTrue(status);
+        boolean pageStatus = loginPage.isOnPage();
+        Assert.assertTrue(pageStatus);
     }
 
     @When("User input {string} on phone number input field on login page")
@@ -33,7 +37,12 @@ public class LoginStepDefinitions {
 
     @Then("User is on home page")
     public void userIsOnHomePage() {
-        boolean status = true; // Change this after home page is available
-        Assert.assertTrue(status);
+        boolean navStatus = navBar.isDisplayed();
+        Assert.assertTrue(navStatus);
+
+        navBar.goToHomePage();
+
+        boolean pageStatus = homePage.isOnPage();
+        Assert.assertTrue(pageStatus);
     }
 }
