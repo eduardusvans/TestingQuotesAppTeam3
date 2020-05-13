@@ -12,7 +12,8 @@ public class LoginStepDefinitions {
 
     @Given("User is on Quotes App login page")
     public void userIsOnQuotesAppLoginPage() {
-        loginPage.isOnPage();
+        boolean status = loginPage.isOnPage();
+        Assert.assertTrue(status);
     }
 
     @When("User input {string} on phone number input field on login page")
