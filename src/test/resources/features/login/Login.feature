@@ -5,7 +5,7 @@ Feature: Login
 
   @Positive @NeedLogout
   Scenario Outline: Login with registered phone number and correct password
-    Given User is on Quotes App starting page
+    Given User is on Quotes Landing page
     When User click login to account button on starting page
     When User is on Quotes App login page
     When User input "<phoneNumber>" on phone number input field on login page
