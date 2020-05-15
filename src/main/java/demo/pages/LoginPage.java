@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-    public boolean isOnStartingPage() {
+    public boolean isOnLandingPage() {
         WebDriverWait wait = new WebDriverWait(androidDriver, 15);
         WebElement loginButton = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login_account")));

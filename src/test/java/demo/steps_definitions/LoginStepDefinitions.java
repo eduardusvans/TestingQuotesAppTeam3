@@ -18,9 +18,9 @@ public class LoginStepDefinitions {
     private static String userPhoneNumber;
     private static String userPassword;
 
-    @Given("User is on Quotes App starting page")
-    public void userIsOnQuotesAppStartingPage() {
-        boolean pageStatus = loginPage.isOnStartingPage();
+    @Given("User is on Quotes Landing page")
+    public void userIsOnQuotesLandingPage() {
+        boolean pageStatus = loginPage.isOnLandingPage();
         Assert.assertTrue(pageStatus);
     }
 
