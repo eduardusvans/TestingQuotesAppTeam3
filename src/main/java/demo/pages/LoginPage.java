@@ -20,7 +20,7 @@ public class LoginPage {
     public void inputPhoneNumber(String phoneNumberInput) {
         AndroidElement input = AndroidDriverInstance
                 .androidDriver
-                .findElement(By.id("editText"));
+                .findElement(By.id("et_phone"));
 
         input.sendKeys(phoneNumberInput);
     }
