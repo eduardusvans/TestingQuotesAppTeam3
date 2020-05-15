@@ -10,7 +10,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-    public boolean isOnPage() {
+    public boolean isOnStartingPage() {
+        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebElement loginButton = wait
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login_account")));
+        return loginButton.isDisplayed();
+    }
+
+    public void clickLoginAccount() {
+        AndroidElement button = AndroidDriverInstance
+                .androidDriver
+                .findElement(By.id("btn_login_account"));
+
+        button.click();
+    }
+
+    public boolean isOnLoginPage() {
         WebDriverWait wait = new WebDriverWait(androidDriver, 15);
         WebElement loginButton = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login")));

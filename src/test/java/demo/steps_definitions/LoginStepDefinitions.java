@@ -3,6 +3,7 @@ package demo.steps_definitions;
 import demo.pages.HomePage;
 import demo.pages.LoginPage;
 import demo.pages.NavBar;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,9 +15,20 @@ public class LoginStepDefinitions {
     NavBar navBar = new NavBar();
     HomePage homePage = new HomePage();
 
-    @Given("User is on Quotes App login page")
+    @Given("User is on Quotes App starting page")
+    public void userIsOnQuotesAppStartingPage() {
+        boolean pageStatus = loginPage.isOnStartingPage();
+        Assert.assertTrue(pageStatus);
+    }
+
+    @When("User click login to account button on starting page")
+    public void userClickLoginToAccountButtonOnStartingPage() {
+        loginPage.clickLoginAccount();
+    }
+
+    @When("User is on Quotes App login page")
     public void userIsOnQuotesAppLoginPage() {
-        boolean pageStatus = loginPage.isOnPage();
+        boolean pageStatus = loginPage.isOnLoginPage();
         Assert.assertTrue(pageStatus);
     }
 
@@ -45,4 +57,6 @@ public class LoginStepDefinitions {
         boolean pageStatus = homePage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
+
+
 }
