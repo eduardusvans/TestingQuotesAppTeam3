@@ -26,13 +26,13 @@ public class LoginStepDefinitions {
         Assert.assertTrue(pageStatus);
     }
 
-    @When("User click login to account button on starting page")
-    public void userClickLoginToAccountButtonOnStartingPage() {
+    @When("User click login to account button on landing page")
+    public void userClickLoginToAccountButtonOnLandingPage() {
         landingPage.clickLoginToAccountButton();
     }
 
-    @When("User is on Quotes login page")
-    public void userIsOnQuotesLoginPage() {
+    @When("User is on login page")
+    public void userIsOnLoginPage() {
         boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
@@ -49,9 +49,9 @@ public class LoginStepDefinitions {
         loginPage.inputPassword(password);
     }
 
-    @When("User click login button on login page")
-    public void userClickLoginButtonOnLoginPage() {
-        loginPage.clickLoginButton();
+    @When("User click login to account button on login page")
+    public void userClickLoginToAccountButtonOnLoginPage() {
+        loginPage.clickLoginToAccountButton();
     }
 
     @Then("User is on home page")
