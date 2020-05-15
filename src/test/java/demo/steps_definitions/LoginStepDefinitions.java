@@ -15,6 +15,9 @@ public class LoginStepDefinitions {
     NavBar navBar = new NavBar();
     HomePage homePage = new HomePage();
 
+    private static String userPhoneNumber;
+    private static String userPassword;
+
     @Given("User is on Quotes App starting page")
     public void userIsOnQuotesAppStartingPage() {
         boolean pageStatus = loginPage.isOnStartingPage();
@@ -34,11 +37,13 @@ public class LoginStepDefinitions {
 
     @When("User input {string} on phone number input field on login page")
     public void userInputOnPhoneNumberInputFieldOnLoginPage(String phoneNumber) {
+        userPhoneNumber = phoneNumber;
         loginPage.inputPhoneNumber(phoneNumber);
     }
 
     @When("User input {string} on password input field on login page")
     public void userInputOnPasswordInputFieldOnLoginPage(String password) {
+        userPassword = password;
         loginPage.inputPassword(password);
     }
 
@@ -58,5 +63,12 @@ public class LoginStepDefinitions {
         Assert.assertTrue(pageStatus);
     }
 
+    public static String getUserPhoneNumber() {
+        return userPhoneNumber;
+    }
+
+    public static String getUserPassword() {
+        return userPassword;
+    }
 
 }

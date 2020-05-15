@@ -19,6 +19,8 @@ public class AndroidDriverHooks {
     public void quitWebdriver(Scenario scenario){
         if (scenario.isFailed()){scenario.embed(((TakesScreenshot)
                 AndroidDriverInstance.androidDriver).getScreenshotAs(OutputType.BYTES), "image/png");
-        scenario.write("Scenario Fail");}AndroidDriverInstance.quit();}
+        scenario.write("Scenario Fail");}
+        AndroidDriverInstance.quit();
+    }
 
 }
