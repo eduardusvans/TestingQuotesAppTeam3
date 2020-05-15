@@ -31,8 +31,8 @@ public class LoginStepDefinitions {
         landingPage.clickLoginToAccountButton();
     }
 
-    @When("User is on Quotes App login page")
-    public void userIsOnQuotesAppLoginPage() {
+    @When("User is on Quotes login page")
+    public void userIsOnQuotesLoginPage() {
         boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
