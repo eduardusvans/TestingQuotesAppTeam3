@@ -10,12 +10,12 @@ import org.openqa.selenium.TakesScreenshot;
 
 import io.restassured.response.Response;
 
-import static demo.steps_definitions.LoginStepDefinitions.getUserPassword;
-import static demo.steps_definitions.LoginStepDefinitions.getUserPhoneNumber;
+import static demo.steps_definitions.RegisterStepDefinitions.getUserPassword;
+import static demo.steps_definitions.RegisterStepDefinitions.getUserPhoneNumber;
 
-public class LoginHooks {
+public class RegisterHooks {
 
-    @After(value = "@Login and @LogoutHook")
+    @After(value = "@Register and @LogoutHook")
     public void logoutAccount(){
         String phoneNumber = String.format("+62%s", getUserPhoneNumber());
         String password = getUserPassword();
@@ -24,6 +24,12 @@ public class LoginHooks {
         logoutRequest.setPassword(password);
 
         Response response = UserController.postLogout(logoutRequest);
+        response.getBody().prettyPrint();
+    }
+
+    @After(value = "@Register and @DeleteHook")
+    public void deleteAccount(){
+        Response response = UserController.deleteUser(getUserPhoneNumber());
         response.getBody().prettyPrint();
     }
 

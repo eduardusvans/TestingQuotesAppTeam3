@@ -25,4 +25,12 @@ public class LandingPage {
 
         button.click();
     }
+
+    public void clickCreateAccountButton() {
+        AndroidElement button = AndroidDriverInstance
+                .androidDriver
+                .findElement(By.id("btn_create_account"));
+
+        button.click();
+    }
 }
