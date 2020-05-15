@@ -26,7 +26,7 @@ public class LoginPage {
     }
 
     public boolean isOnLoginPage() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
         WebElement loginButton = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login")));
         return loginButton.isDisplayed();
@@ -54,6 +54,14 @@ public class LoginPage {
                 .findElement(By.id("btn_login"));
 
         button.click();
+        //waitAbit(2000);
     }
 
+    public void waitAbit(int milis) {
+        try {
+            Thread.sleep(milis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

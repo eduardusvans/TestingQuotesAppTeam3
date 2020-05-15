@@ -11,7 +11,7 @@ import static demo.driver.AndroidDriverInstance.androidDriver;
 
 public class NavBar {
     public boolean isDisplayed() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
         WebElement NavigationBar = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("bottom_navigation")));
         return NavigationBar.isDisplayed();

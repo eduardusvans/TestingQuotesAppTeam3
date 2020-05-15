@@ -9,9 +9,9 @@ import static demo.driver.AndroidDriverInstance.androidDriver;
 
 public class HomePage {
     public boolean isOnPage() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
         WebElement scanImage = wait
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("ivScan")));
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("iv_scan")));
         return scanImage.isDisplayed();
     }
 }
