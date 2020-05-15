@@ -14,7 +14,7 @@ Feature: Login
     Then User is on home page
     Examples:
       | phoneNumber | password |
-      | 85926182305 | Eduardus333  |
+      | 85926182305 | Eduardus333!  |
 
 
 

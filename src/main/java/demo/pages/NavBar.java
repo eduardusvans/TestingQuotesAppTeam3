@@ -20,7 +20,7 @@ public class NavBar {
     public void goToHistoryPage() {
         AndroidElement button = AndroidDriverInstance
                 .androidDriver
-                .findElement(By.id("page_1"));
+                .findElement(By.id("page_2"));
 
         button.click();
     }
@@ -28,7 +28,7 @@ public class NavBar {
     public void goToHomePage() {
         AndroidElement button = AndroidDriverInstance
                 .androidDriver
-                .findElement(By.id("page_2"));
+                .findElement(By.id("page_1"));
 
         button.click();
     }
