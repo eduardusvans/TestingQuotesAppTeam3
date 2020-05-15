@@ -33,7 +33,7 @@ public class LoginPage {
         input.sendKeys(passwordInput);
     }
 
-    public void clickLoginButton() {
+    public void clickLoginToAccountButton() {
         AndroidElement button = AndroidDriverInstance
                 .androidDriver
                 .findElement(By.id("btn_login"));
