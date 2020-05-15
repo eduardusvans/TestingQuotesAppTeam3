@@ -1,6 +1,7 @@
 package demo.steps_definitions;
 
 import demo.pages.HomePage;
+import demo.pages.LandingPage;
 import demo.pages.LoginPage;
 import demo.pages.NavBar;
 import io.cucumber.java.en.And;
@@ -11,6 +12,7 @@ import org.junit.Assert;
 
 public class LoginStepDefinitions {
 
+    LandingPage landingPage = new LandingPage();
     LoginPage loginPage = new LoginPage();
     NavBar navBar = new NavBar();
     HomePage homePage = new HomePage();
@@ -20,18 +22,18 @@ public class LoginStepDefinitions {
 
     @Given("User is on Quotes Landing page")
     public void userIsOnQuotesLandingPage() {
-        boolean pageStatus = loginPage.isOnLandingPage();
+        boolean pageStatus = landingPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
 
     @When("User click login to account button on starting page")
     public void userClickLoginToAccountButtonOnStartingPage() {
-        loginPage.clickLoginAccount();
+        landingPage.clickLoginToAccountButton();
     }
 
     @When("User is on Quotes App login page")
     public void userIsOnQuotesAppLoginPage() {
-        boolean pageStatus = loginPage.isOnLoginPage();
+        boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
 
