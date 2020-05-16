@@ -1,12 +1,15 @@
 package demo.steps_definitions;
 
 import demo.controller.UserController;
+import demo.driver.AndroidDriverInstance;
 import demo.pages.LandingPage;
 import demo.pages.OtpPage;
 import demo.pages.RegisterPage;
 import demo.pages.SuccessPage;
 import demo.request.LoginRequest;
 import demo.request.LogoutRequest;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
@@ -59,11 +62,13 @@ public class RegisterStepDefinitions {
     @When("User input {string} on password input field on register page")
     public void userInputOnPasswordInputFieldOnRegisterPage(String password) {
         userPassword = password;
+        registerPage.scrollDown();
         registerPage.inputPassword(password);
     }
 
     @When("User input {string} on confirm password input field on register page")
     public void userInputOnConfirmPasswordInputFieldOnRegisterPage(String confirmPassword) {
+        registerPage.scrollDown();
         registerPage.inputConfirmPassword(confirmPassword);
     }
 

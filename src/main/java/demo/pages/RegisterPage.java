@@ -1,11 +1,18 @@
 package demo.pages;
 
 import demo.driver.AndroidDriverInstance;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static demo.driver.AndroidDriverInstance.androidDriver;
 
@@ -95,6 +102,20 @@ public class RegisterPage {
                 .findElement(By.id("btn_choose_phone"));
 
         button.click();
+    }
+
+    public static void scrollDown() {
+        AndroidElement screen = AndroidDriverInstance
+                .androidDriver
+                .findElement(By.xpath("//android.widget.ScrollView/android.view.ViewGroup"));
+        Point center =  screen.getCenter();
+        int startX = 20;
+        int startY = center.getY() + 400;
+        int endX = 20;
+        int endY = center.getY() - 400;
+        TouchAction scroll = new TouchAction(androidDriver);
+        scroll.press(PointOption.point(startX, startY))
+                .moveTo(PointOption.point(endX, endY)).perform();
     }
 
 
