@@ -12,8 +12,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class AndroidDriverInstance {
 
     public static AndroidDriver<AndroidElement> androidDriver;
-    public static String userName = "hendriantomy1";
-    public static String accessKey = "MTHxpb2rRxpzyRpkLmnJ";
 
     public static void initialize() {
         String appiumUrl = "http://127.0.0.1:4723/wd/hub/";
