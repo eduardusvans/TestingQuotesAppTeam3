@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage {
 
     public boolean isOnPage() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
         WebElement loginButton = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login")));
         return loginButton.isDisplayed();
@@ -20,7 +20,7 @@ public class LoginPage {
     public void inputPhoneNumber(String phoneNumberInput) {
         AndroidElement input = AndroidDriverInstance
                 .androidDriver
-                .findElement(By.id("editText"));
+                .findElement(By.id("et_phone"));
 
         input.sendKeys(phoneNumberInput);
     }
@@ -33,12 +33,20 @@ public class LoginPage {
         input.sendKeys(passwordInput);
     }
 
-    public void clickLoginButton() {
+    public void clickLoginToAccountButton() {
         AndroidElement button = AndroidDriverInstance
                 .androidDriver
                 .findElement(By.id("btn_login"));
 
         button.click();
+        //waitAbit(2000);
     }
 
+    public void waitAbit(int milis) {
+        try {
+            Thread.sleep(milis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

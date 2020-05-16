@@ -19,13 +19,12 @@ public class AndroidDriverInstance {
         String appiumUrl = "http://127.0.0.1:4723/wd/hub/";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
-        caps.setCapability("platformVersion", "8.0.0");
         caps.setCapability("deviceName", "device");
         caps.setCapability("udid", "emulator-5554");
         caps.setCapability("autoGrantPermissions", true);
         caps.setCapability("newCommandTimeout", 120);
         caps.setCapability("app",
-                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "mokapos.apk");
+                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "QUOTES.apk");
         caps.setCapability("automationName", "UIAutomator2");
         try {
             androidDriver = new AndroidDriver<>(new URL(appiumUrl), caps);
