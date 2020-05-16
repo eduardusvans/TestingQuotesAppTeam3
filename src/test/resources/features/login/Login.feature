@@ -3,7 +3,7 @@
 @Android @Login
 Feature: Login
 
-  @Positive @NeedLogout
+  @Positive @LogoutHook
   Scenario Outline: Login with registered phone number and correct password
     Given User is on Quotes Landing page
     When User click login to account button on landing page
