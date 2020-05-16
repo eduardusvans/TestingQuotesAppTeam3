@@ -13,8 +13,8 @@ Feature: Login
     When User click login to account button on login page
     Then User is on home page
     Examples:
-      | phoneNumber | password     |
-      | 85926182305 | Eduardus333! |
+      | phoneNumber | password        |
+      | 87722041553 | Bilalelbari111! |
 
 
 
