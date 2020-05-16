@@ -3,11 +3,13 @@ package demo.controller;
 import demo.request.LoginRequest;
 import demo.request.LogoutRequest;
 import io.restassured.RestAssured;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
 public class UserController {
 
-    private static String url = "https://project-danapprentech-3.herokuapp.com";
+    private static String url = "http://ec2-18-212-183-157.compute-1.amazonaws.com:9703"; // AWS
+//    private static String url = "https://project-danapprentech-3.herokuapp.com"; // Heroku
     private static String path = "/api/auth";
 
     public static Response postLogin(LoginRequest loginRequest) {

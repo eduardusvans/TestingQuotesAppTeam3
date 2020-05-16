@@ -102,6 +102,7 @@ public class RegisterStepDefinitions {
     @When("User get a valid OTP number")
     public void userGetAValidOTPNumber() {
         Response response = UserController.getOtp(userPhoneNumber);
+        response.getBody().prettyPrint();
         userOtpNumber = response.body().path("codeOtp");
     }
 

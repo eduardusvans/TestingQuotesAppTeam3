@@ -12,10 +12,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class AndroidDriverInstance {
 
     public static AndroidDriver<AndroidElement> androidDriver;
-    public static String userName = "hendriantomy1";
-    public static String accessKey = "MTHxpb2rRxpzyRpkLmnJ";
 
     public static void initialize() {
+        String app = "QUOTES_AWS.apk";
+//        String app = "QUOTES_HEROKU.apk";
         String appiumUrl = "http://127.0.0.1:4723/wd/hub/";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
@@ -24,7 +24,7 @@ public class AndroidDriverInstance {
         caps.setCapability("autoGrantPermissions", true);
         caps.setCapability("newCommandTimeout", 120);
         caps.setCapability("app",
-                System.getProperty("user.dir") + File.separator + "APP" + File.separator + "QUOTES.apk");
+                System.getProperty("user.dir") + File.separator + "APP" + File.separator + app);
         caps.setCapability("automationName", "UIAutomator2");
         try {
             androidDriver = new AndroidDriver<>(new URL(appiumUrl), caps);
