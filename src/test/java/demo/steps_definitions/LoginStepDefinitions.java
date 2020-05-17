@@ -75,7 +75,7 @@ public class LoginStepDefinitions {
 
     @Then("User is still on login page")
     public void userIsStillOnLoginPage() {
-        loginPage.waitABit(3000);
+        loginPage.waitABit(10000);
         boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }
