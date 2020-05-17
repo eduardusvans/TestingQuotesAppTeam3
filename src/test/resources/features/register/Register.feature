@@ -33,7 +33,7 @@ Feature: Register
   @Positive @Email @LogoutHookR @DeleteHook
   Scenario Outline: Register through email verification with valid inputs
     Given User is on Quotes Landing page
-    And User click create account button on landing page
+    When User click create account button on landing page
     And User is on register page
     And User input "<phoneNumber>" on phone number input field on register page
     And User input "<fullName>" on full name input field on register page
