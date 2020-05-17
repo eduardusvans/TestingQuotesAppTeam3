@@ -94,4 +94,21 @@ public class TransactionStepDefinitions {
         Assert.assertEquals("Transaction successfully", transactionStatus);
     }
 
+    @Then("User transaction is not processed")
+    public void userTransactionIsNotProcessed() {
+        dataPackagePage.waitABit(3000);
+        try {
+            Response response = UserController.getTransactionHistory(userPhoneNumber);
+            boolean paymentStatus = response.getBody().path("history.last().statusPembayaran");
+            Assert.assertNotEquals(false, paymentStatus);
+        } catch (Exception e) {
+            Assert.assertFalse(false);
+        }
+    }
+
+    @Then("User cannot see data package list on data package page")
+    public void userCannotSeeDataPackageListOnDataPackagePage() {
+        boolean status = dataPackagePage.dataPackageIsDisplayed();
+        Assert.assertFalse(status);
+    }
 }

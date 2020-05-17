@@ -32,10 +32,14 @@ public class DataPackagePage {
     }
 
     public boolean dataPackageIsDisplayed() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
-        WebElement recyclerView = wait
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("recyler_view")));
-        return recyclerView.isDisplayed();
+        try {
+            WebDriverWait wait = new WebDriverWait(androidDriver, 5);
+            WebElement recyclerView = wait
+                    .until(ExpectedConditions.presenceOfElementLocated(By.id("recyler_view")));
+            return recyclerView.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void clickChosenDataPackage(String priceTag) {

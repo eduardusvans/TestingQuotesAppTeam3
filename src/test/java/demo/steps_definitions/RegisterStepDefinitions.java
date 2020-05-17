@@ -39,7 +39,8 @@ public class RegisterStepDefinitions {
 
     @When("User is on register page")
     public void userIsOnRegisterPage() {
-        registerPage.isOnPage();
+        boolean status = registerPage.isOnPage();
+        Assert.assertTrue(status);
     }
 
     @When("User input {string} on phone number input field on register page")
@@ -167,5 +168,17 @@ public class RegisterStepDefinitions {
     @When("User click go to login page button on verification method window")
     public void userClickGoToLoginPageButtonOnVerificationMethodWindow() {
         registerPage.clickPhoneNumberButton();
+    }
+
+    @Then("User doesn't see the verification method window on register page")
+    public void userDoesnTSeeTheVerificationMethodWindowOnRegisterPage() {
+        boolean status = registerPage.verificationWindowIsDisplayed();
+        Assert.assertTrue(!status);
+    }
+
+    @Then("User is still on register page")
+    public void userIsStillOnRegisterPage() {
+        boolean status = registerPage.isOnPage();
+        Assert.assertTrue(status);
     }
 }

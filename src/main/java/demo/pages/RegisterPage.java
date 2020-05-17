@@ -82,10 +82,14 @@ public class RegisterPage {
     }
 
     public boolean verificationWindowIsDisplayed() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
-        WebElement emailButton = wait
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_choose_email")));
-        return emailButton.isDisplayed();
+        try {
+            WebDriverWait wait = new WebDriverWait(androidDriver, 3);
+            WebElement emailButton = wait
+                    .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_choose_email")));
+            return emailButton.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void clickEmailButton() {
