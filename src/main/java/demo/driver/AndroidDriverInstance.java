@@ -14,8 +14,8 @@ public class AndroidDriverInstance {
     public static AndroidDriver<AndroidElement> androidDriver;
 
     public static void initialize() {
-        String app = "QUOTES_AWS.apk";
-//        String app = "QUOTES_HEROKU.apk";
+//        String app = "QUOTES_AWS.apk";
+        String app = "QUOTES_HEROKU.apk";
         String appiumUrl = "http://127.0.0.1:4723/wd/hub/";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");

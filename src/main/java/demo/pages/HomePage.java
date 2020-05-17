@@ -1,5 +1,7 @@
 package demo.pages;
 
+import demo.driver.AndroidDriverInstance;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,5 +15,13 @@ public class HomePage {
         WebElement scanImage = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("iv_scan")));
         return scanImage.isDisplayed();
+    }
+
+    public void clickDataPackage() {
+        AndroidElement menu = AndroidDriverInstance
+                .androidDriver
+                .findElement(By.id("cl_data_package"));
+
+        menu.click();
     }
 }

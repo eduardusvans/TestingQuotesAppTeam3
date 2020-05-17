@@ -8,9 +8,9 @@ import io.restassured.response.Response;
 
 public class UserController {
 
-    private static String url = "http://ec2-18-212-183-157.compute-1.amazonaws.com:9703"; // AWS
-//    private static String url = "https://project-danapprentech-3.herokuapp.com"; // Heroku
-    private static String path = "/api/auth";
+//    private static String url = "http://ec2-18-212-183-157.compute-1.amazonaws.com:9703"; // AWS
+    private static String url = "https://project-danapprentech-3.herokuapp.com"; // Heroku
+    private static String path = "/api";
 
     public static Response postLogin(LoginRequest loginRequest) {
         Response response = RestAssured
@@ -22,7 +22,7 @@ public class UserController {
                 .header("Content-type", "application/json")
                 .header("Accept", "*/*")
                 .body(loginRequest)
-                .post("/signin");
+                .post("/auth/signin");
 
         return response;
     }
@@ -37,7 +37,7 @@ public class UserController {
                 .header("Content-type", "application/json")
                 .header("Accept", "*/*")
                 .body(logoutRequest)
-                .post("/signout");
+                .post("/auth/signout");
 
         return response;
     }
@@ -51,7 +51,7 @@ public class UserController {
                 .all()
                 .header("Content-type", "application/json")
                 .header("Accept", "*/*")
-                .get(String.format("/qa-get-otp/+62%s", phoneNumber));
+                .get(String.format("/auth/qa-get-otp/+62%s", phoneNumber));
 
         return response;
     }
@@ -63,7 +63,7 @@ public class UserController {
                 .basePath(path)
                 .log()
                 .all()
-                .delete(String.format("/delete-user/+62%s", phoneNumber));
+                .delete(String.format("/auth/delete-user/+62%s", phoneNumber));
 
         return response;
     }
@@ -77,7 +77,7 @@ public class UserController {
                 .all()
                 .header("Content-type", "application/json")
                 .header("Accept", "*/*")
-                .get(String.format("/qa-get-token/%s", email));
+                .get(String.format("/auth/qa-get-token/%s", email));
 
         return response;
     }
@@ -91,7 +91,21 @@ public class UserController {
                 .all()
                 .header("Content-type", "application/json")
                 .header("Accept", "*/*")
-                .get(String.format("/confirmation-account/%s", token));
+                .get(String.format("/auth/confirmation-account/%s", token));
+
+        return response;
+    }
+
+    public static Response getTransactionHistory(String phoneNumber) {
+        Response response = RestAssured
+                .given()
+                .baseUri(url)
+                .basePath(path)
+                .log()
+                .all()
+                .header("Content-type", "application/json")
+                .header("Accept", "*/*")
+                .get(String.format("/transaksi/history/+62%s", phoneNumber));
 
         return response;
     }

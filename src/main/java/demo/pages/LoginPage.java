@@ -39,14 +39,6 @@ public class LoginPage {
                 .findElement(By.id("btn_login"));
 
         button.click();
-        //waitAbit(2000);
     }
 
-    public void waitAbit(int milis) {
-        try {
-            Thread.sleep(milis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }
