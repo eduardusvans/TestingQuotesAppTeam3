@@ -13,15 +13,15 @@ Feature: Transaction
     And User click login to account button on login page
     And User is on home page
     When User click data package on transaction column on home page
-    When User is on data package page
-    When User input "<chosenPhoneNumber>" as chosen phone number on phone number input field on data package page
-    When User see data package list on data package page
-    When User click data package that has "<chosenPrice>" on its price tag
-    When User see transaction pop up window
-    When User click choose method button on transaction pop up window
-    When User click wallet balance method radio button on transaction pop up window
-    When User input "<pin>" on pin input field on transaction pop up window
-    When User click pay now button on transaction pop up window
+    And User is on data package page
+    And User input "<chosenPhoneNumber>" as chosen phone number on phone number input field on data package page
+    And User see data package list on data package page
+    And User click data package that has "<chosenPrice>" on its price tag
+    And User see transaction pop up window
+    And User click choose method button on transaction pop up window
+    And User click wallet balance method radio button on transaction pop up window
+    And User input "<pin>" on pin input field on transaction pop up window
+    And User click pay now button on transaction pop up window
     Then User transaction is success
 
     Examples:
@@ -40,15 +40,15 @@ Feature: Transaction
     And User click login to account button on login page
     And User is on home page
     When User click data package on transaction column on home page
-    When User is on data package page
-    When User input "85926182309" as chosen phone number on phone number input field on data package page
-    When User see data package list on data package page
-    When User click data package that has "Rp89.000" on its price tag
-    When User see transaction pop up window
-    When User click choose method button on transaction pop up window
-    When User click wallet balance method radio button on transaction pop up window
-    When User input "456789" on pin input field on transaction pop up window
-    When User click pay now button on transaction pop up window
+    And User is on data package page
+    And User input "85926182309" as chosen phone number on phone number input field on data package page
+    And User see data package list on data package page
+    And User click data package that has "Rp89.000" on its price tag
+    And User see transaction pop up window
+    And User click choose method button on transaction pop up window
+    And User click wallet balance method radio button on transaction pop up window
+    And User input "456789" on pin input field on transaction pop up window
+    And User click pay now button on transaction pop up window
     Then User transaction is not processed
 
   @Negative @Wallet @LogoutHookL @FalsePin
@@ -61,15 +61,15 @@ Feature: Transaction
     And User click login to account button on login page
     And User is on home page
     When User click data package on transaction column on home page
-    When User is on data package page
-    When User input "85926182309" as chosen phone number on phone number input field on data package page
-    When User see data package list on data package page
-    When User click data package that has "Rp89.000" on its price tag
-    When User see transaction pop up window
-    When User click choose method button on transaction pop up window
-    When User click wallet balance method radio button on transaction pop up window
-    When User input "456789" on pin input field on transaction pop up window
-    When User click pay now button on transaction pop up window
+    And User is on data package page
+    And User input "85926182309" as chosen phone number on phone number input field on data package page
+    And User see data package list on data package page
+    And User click data package that has "Rp89.000" on its price tag
+    And User see transaction pop up window
+    And User click choose method button on transaction pop up window
+    And User click wallet balance method radio button on transaction pop up window
+    And User input "456789" on pin input field on transaction pop up window
+    And User click pay now button on transaction pop up window
     Then User transaction is not processed
 
   @Negative @Wallet @LogoutHookL @UnknownChosenPhoneNumber
@@ -82,7 +82,7 @@ Feature: Transaction
     And User click login to account button on login page
     And User is on home page
     When User click data package on transaction column on home page
-    When User is on data package page
-    When User input "11111111111" as chosen phone number on phone number input field on data package page
+    And User is on data package page
+    And User input "11111111111" as chosen phone number on phone number input field on data package page
     Then User cannot see data package list on data package page
 

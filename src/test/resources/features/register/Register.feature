@@ -7,24 +7,24 @@ Feature: Register
   Scenario Outline: Register through OTP verification with valid inputs
     Given User is on Quotes Landing page
     When User click create account button on landing page
-    When User is on register page
-    When User input "<phoneNumber>" on phone number input field on register page
-    When User input "<fullName>" on full name input field on register page
-    When User input "<email>" on email input field on register page
-    When User input "<password>" on password input field on register page
-    When User input "<confirmPassword>" on confirm password input field on register page
-    When User input "<pin>" on pin input field on register page
-    When User click create account button on register page
-    When User see the verification method window on register page
-    When User click phone number button on verification method window
-    When User is on OTP page
-    When User get a valid OTP number
-    When User enter valid OTP number on OTP page
-    When User click continue button on OTP page
-    When User is on success page
-    When User click start using button on success page
+    And User is on register page
+    And User input "<phoneNumber>" on phone number input field on register page
+    And User input "<fullName>" on full name input field on register page
+    And User input "<email>" on email input field on register page
+    And User input "<password>" on password input field on register page
+    And User input "<confirmPassword>" on confirm password input field on register page
+    And User input "<pin>" on pin input field on register page
+    And User click create account button on register page
+    And User see the verification method window on register page
+    And User click phone number button on verification method window
+    And User is on OTP page
+    And User get a valid OTP number
+    And User enter valid OTP number on OTP page
+    And User click continue button on OTP page
+    And User is on success page
+    And User click start using button on success page
     Then User is on login page
-    Then User is registered as Quotes user
+    And User is registered as Quotes user
     Examples:
       | phoneNumber | fullName             | email                      | password         | confirmPassword  | pin    |
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
@@ -33,22 +33,22 @@ Feature: Register
   @Positive @Email @LogoutHookR @DeleteHook
   Scenario Outline: Register through email verification with valid inputs
     Given User is on Quotes Landing page
-    When User click create account button on landing page
-    When User is on register page
-    When User input "<phoneNumber>" on phone number input field on register page
-    When User input "<fullName>" on full name input field on register page
-    When User input "<email>" on email input field on register page
-    When User input "<password>" on password input field on register page
-    When User input "<confirmPassword>" on confirm password input field on register page
-    When User input "<pin>" on pin input field on register page
-    When User click create account button on register page
-    When User see the verification method window on register page
-    When User click email button on verification method window
-    When User get an email verification
-    When User click an email verification
-    When User click go to login page button on verification method window
+    And User click create account button on landing page
+    And User is on register page
+    And User input "<phoneNumber>" on phone number input field on register page
+    And User input "<fullName>" on full name input field on register page
+    And User input "<email>" on email input field on register page
+    And User input "<password>" on password input field on register page
+    And User input "<confirmPassword>" on confirm password input field on register page
+    And User input "<pin>" on pin input field on register page
+    And User click create account button on register page
+    And User see the verification method window on register page
+    And User click email button on verification method window
+    And User get an email verification
+    And User click an email verification
+    And User click go to login page button on verification method window
     Then User is on login page
-    Then User is registered as Quotes user
+    And User is registered as Quotes user
     Examples:
       | phoneNumber | fullName             | email                      | password         | confirmPassword  | pin    |
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
@@ -58,16 +58,16 @@ Feature: Register
   Scenario Outline: Register an account with one of the input is invalid
     Given User is on Quotes Landing page
     When User click create account button on landing page
-    When User is on register page
-    When User input "<phoneNumber>" on phone number input field on register page
-    When User input "<fullName>" on full name input field on register page
-    When User input "<email>" on email input field on register page
-    When User input "<password>" on password input field on register page
-    When User input "<confirmPassword>" on confirm password input field on register page
-    When User input "<pin>" on pin input field on register page
-    When User click create account button on register page
+    And User is on register page
+    And User input "<phoneNumber>" on phone number input field on register page
+    And User input "<fullName>" on full name input field on register page
+    And User input "<email>" on email input field on register page
+    And User input "<password>" on password input field on register page
+    And User input "<confirmPassword>" on confirm password input field on register page
+    And User input "<pin>" on pin input field on register page
+    And User click create account button on register page
     Then User doesn't see the verification method window on register page
-    Then User is still on register page
+    And User is still on register page
 
     Examples:
       | phoneNumber | fullName | email                      | password | confirmPassword  | pin    |
