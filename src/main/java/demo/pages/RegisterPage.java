@@ -115,6 +115,15 @@ public class RegisterPage {
         button.click();
     }
 
+    public void waitABit(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public static void scrollDown() {
         AndroidElement screen = AndroidDriverInstance
                 .androidDriver
@@ -128,6 +137,5 @@ public class RegisterPage {
         scroll.press(PointOption.point(startX, startY))
                 .moveTo(PointOption.point(endX, endY)).perform();
     }
-
 
 }

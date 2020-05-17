@@ -66,7 +66,7 @@ Feature: Register
     And User input "<confirmPassword>" on confirm password input field on register page
     And User input "<pin>" on pin input field on register page
     And User click create account button on register page
-    Then User doesn't see the verification method window on register page
+    Then User don't see the verification method window on register page
     And User is still on register page
 
     Examples:

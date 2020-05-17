@@ -170,15 +170,18 @@ public class RegisterStepDefinitions {
         registerPage.clickPhoneNumberButton();
     }
 
-    @Then("User doesn't see the verification method window on register page")
-    public void userDoesnTSeeTheVerificationMethodWindowOnRegisterPage() {
+    @Then("User don't see the verification method window on register page")
+    public void userDonTSeeTheVerificationMethodWindowOnRegisterPage() {
+        registerPage.waitABit(5000);
         boolean status = registerPage.verificationWindowIsDisplayed();
         Assert.assertTrue(!status);
     }
 
     @Then("User is still on register page")
     public void userIsStillOnRegisterPage() {
+        registerPage.waitABit(5000);
         boolean status = registerPage.isOnPage();
         Assert.assertTrue(status);
     }
+
 }
