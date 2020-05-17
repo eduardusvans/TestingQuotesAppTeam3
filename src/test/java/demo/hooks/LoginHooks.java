@@ -15,7 +15,7 @@ import static demo.steps_definitions.LoginStepDefinitions.getUserPhoneNumber;
 
 public class LoginHooks {
 
-    @After(value = "@Login and @LogoutHook")
+    @After(value = "@LogoutHookL")
     public void logoutAccount(){
         String phoneNumber = String.format("+62%s", getUserPhoneNumber());
         String password = getUserPassword();

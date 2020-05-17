@@ -3,7 +3,7 @@
 @Android @Transaction
 Feature: Transaction
 
-  @Positive @Wallet @Login @LogoutHook
+  @Positive @Wallet @LogoutHookL
   Scenario Outline: Buy data package for valid phone number through wallet payment with sufficient balance
     Given User is on Quotes Landing page
     And User click login to account button on landing page
@@ -30,7 +30,7 @@ Feature: Transaction
       | 81290137272       | Rp80.000    | 345678 |
       | 81290137272       | Rp89.000    | 345678 |
 
-  @Negative @Wallet @Login @LogoutHook @NotEnough
+  @Negative @Wallet @LogoutHookL @NotEnough
   Scenario: Buy data package for valid phone number through wallet payment but not enough balance
     Given User is on Quotes Landing page
     And User click login to account button on landing page
@@ -51,7 +51,7 @@ Feature: Transaction
     When User click pay now button on transaction pop up window
     Then User transaction is not processed
 
-  @Negative @Wallet @Login @LogoutHook @FalsePin
+  @Negative @Wallet @LogoutHookL @FalsePin
   Scenario: Buy data package for valid phone number through wallet payment but not enough balance
     Given User is on Quotes Landing page
     And User click login to account button on landing page
@@ -72,7 +72,7 @@ Feature: Transaction
     When User click pay now button on transaction pop up window
     Then User transaction is not processed
 
-  @Negative @Wallet @Login @LogoutHook @UnknownChosenPhoneNumber
+  @Negative @Wallet @LogoutHookL @UnknownChosenPhoneNumber
   Scenario: Buy data package for valid phone number through wallet payment but not enough balance
     Given User is on Quotes Landing page
     And User click login to account button on landing page

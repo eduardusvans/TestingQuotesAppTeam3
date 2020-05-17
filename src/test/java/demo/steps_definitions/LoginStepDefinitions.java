@@ -65,11 +65,6 @@ public class LoginStepDefinitions {
         Assert.assertTrue(pageStatus);
     }
 
-
-    @Then("User is not registered as Quotes user")
-    public void userIsNotRegisteredAsQuotesUser() {
-    }
-
     public static String getUserPhoneNumber() {
         return userPhoneNumber;
     }
@@ -80,6 +75,7 @@ public class LoginStepDefinitions {
 
     @Then("User is still on login page")
     public void userIsStillOnLoginPage() {
+        loginPage.waitABit(3000);
         boolean pageStatus = loginPage.isOnPage();
         Assert.assertTrue(pageStatus);
     }

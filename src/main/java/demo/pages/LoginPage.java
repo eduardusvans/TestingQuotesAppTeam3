@@ -41,4 +41,13 @@ public class LoginPage {
         button.click();
     }
 
+    public void waitABit(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 }

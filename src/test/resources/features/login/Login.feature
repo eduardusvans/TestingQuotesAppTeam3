@@ -28,7 +28,7 @@ Feature: Login
     Examples:
       | phoneNumber | password        |
       # unregistered phone number
-      | 87722041553 | Abcdef1!        |
+      | 89695966514 | Abcdef1!        |
       # wrong password
       | 87722041553 | Bilalelbari123! |
 

@@ -15,7 +15,7 @@ import static demo.steps_definitions.RegisterStepDefinitions.getUserPhoneNumber;
 
 public class RegisterHooks {
 
-    @After(value = "@Register and @LogoutHook")
+    @After(value = "@LogoutHookR")
     public void logoutAccount(){
         String phoneNumber = String.format("+62%s", getUserPhoneNumber());
         String password = getUserPassword();
@@ -27,7 +27,7 @@ public class RegisterHooks {
         response.getBody().prettyPrint();
     }
 
-    @After(value = "@Register and @DeleteHook")
+    @After(value = "@DeleteHook")
     public void deleteAccount(){
         Response response = UserController.deleteUser(getUserPhoneNumber());
         response.getBody().prettyPrint();

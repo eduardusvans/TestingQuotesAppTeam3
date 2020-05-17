@@ -3,7 +3,7 @@
 @Android @Register
 Feature: Register
 
-  @Positive @OTP @LogoutHook @DeleteHook
+  @Positive @OTP @LogoutHookR @DeleteHook
   Scenario Outline: Register through OTP verification with valid inputs
     Given User is on Quotes Landing page
     When User click create account button on landing page
@@ -30,7 +30,7 @@ Feature: Register
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
       | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
 
-  @Positive @Email @LogoutHook @DeleteHook
+  @Positive @Email @LogoutHookR @DeleteHook
   Scenario Outline: Register through email verification with valid inputs
     Given User is on Quotes Landing page
     When User click create account button on landing page
