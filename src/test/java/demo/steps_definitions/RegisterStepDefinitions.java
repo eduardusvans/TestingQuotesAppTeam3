@@ -156,7 +156,7 @@ public class RegisterStepDefinitions {
     @When("User get an email verification")
     public void userGetAnEmailVerification() {
         Response response = UserController.getToken(userEmail);
-        userToken = response.body().path("codeVerify");
+        userToken = response.getBody().path("codeVerify");
     }
 
     @When("User click an email verification")
