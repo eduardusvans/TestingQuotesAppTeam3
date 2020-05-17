@@ -12,7 +12,7 @@ import static demo.driver.AndroidDriverInstance.androidDriver;
 public class LandingPage {
 
     public boolean isOnPage() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver, 60);
         WebElement loginButton = wait
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login_account")));
         return loginButton.isDisplayed();
