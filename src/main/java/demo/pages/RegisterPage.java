@@ -19,10 +19,17 @@ import static demo.driver.AndroidDriverInstance.androidDriver;
 public class RegisterPage {
 
     public boolean isOnPage() {
-        WebDriverWait wait = new WebDriverWait(androidDriver, 30);
-        WebElement phoneNumberInput = wait
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("etPhoneRegister")));
-        return phoneNumberInput.isDisplayed();
+        try {
+            WebDriverWait wait = new WebDriverWait(androidDriver, 5);
+            WebElement phoneNumberInput = wait
+                    .until(ExpectedConditions.presenceOfElementLocated(By.id("etPhoneRegister")));
+            return phoneNumberInput.isDisplayed();
+        } catch (Exception e) {
+            WebDriverWait wait = new WebDriverWait(androidDriver, 5);
+            WebElement phoneNumberInput = wait
+                    .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_register")));
+            return phoneNumberInput.isDisplayed();
+        }
     }
 
     public void inputPhoneNumber(String phoneNumberInput) {
