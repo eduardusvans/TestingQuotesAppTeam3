@@ -82,7 +82,11 @@ public class TransactionStepDefinitions {
     @When("User click pay now button on transaction pop up window")
     public void userClickPayNowButtonOnTransactionPopUpWindow() {
         Response response = UserController.getTransactionHistory(userPhoneNumber);
-        lastTransactionId = response.getBody().path("history.last().idtransaksi");
+        try {
+            lastTransactionId = response.getBody().path("history.last().idtransaksi");
+        } catch (Exception e) {
+            lastTransactionId = -1;
+        }
         dataPackagePage.clickChooseMethodButton();
     }
 
