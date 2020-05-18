@@ -80,9 +80,9 @@ Feature: Register
       # taken phone number
       | 87722041553 | abc      | testingregister3@gmail.com | Abcdef1! | Abcdef1!         | 123456 |
       # password less than 8 characters
-      | 87722041553 | abc      | testingregister3@gmail.com | Abcde1!  | Abcde1!          | 123456 |
+      | 89695966514 | abc      | testingregister3@gmail.com | Abcde1!  | Abcde1!          | 123456 |
       # Different confirm password input with password input
-      | 87722041553 | abc      | testingregister3@gmail.com | Abcdef1! | Abcdefghijklmn1! | 123456 |
+      | 89695966514 | abc      | testingregister3@gmail.com | Abcdef1! | Abcdefghijklmn1! | 123456 |
       # Pin number is not 6 characters
       | 89695966514 | abc      | testingregister3@gmail.com | Abcdef1! | Abcdef1!         | 12345  |
 
