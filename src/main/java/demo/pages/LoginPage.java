@@ -12,9 +12,9 @@ public class LoginPage {
 
     public boolean isOnPage() {
         WebDriverWait wait = new WebDriverWait(androidDriver, 15);
-        WebElement loginButton = wait
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("btn_login")));
-        return loginButton.isDisplayed();
+        WebElement passwordInput = wait
+                .until(ExpectedConditions.presenceOfElementLocated(By.id("et_password")));
+        return passwordInput.isDisplayed();
     }
 
     public void inputPhoneNumber(String phoneNumberInput) {

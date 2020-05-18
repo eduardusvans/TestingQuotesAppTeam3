@@ -14,7 +14,7 @@ Feature: Login
     Then User is on home page
     Examples:
       | phoneNumber | password        |
-      | 87722074250 | Bilalelbari111! |
+      | 87722041553 | Bilalelbari111! |
 
   @Negative
   Scenario Outline: Login with unregistered phone number, or invalid one of the input
@@ -30,6 +30,6 @@ Feature: Login
       # unregistered phone number
       | 89695966514 | Abcdef1!        |
       # wrong password
-      | 87722074250 | Bilalelbari123! |
+      | 87722041553 | Bilalelbari123! |
 
 

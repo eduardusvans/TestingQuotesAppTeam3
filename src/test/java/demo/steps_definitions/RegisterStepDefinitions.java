@@ -174,7 +174,7 @@ public class RegisterStepDefinitions {
     public void userDonTSeeTheVerificationMethodWindowOnRegisterPage() {
         registerPage.waitABit(5000);
         boolean status = registerPage.verificationWindowIsDisplayed();
-        Assert.assertTrue(!status);
+        Assert.assertFalse(status);
     }
 
     @Then("User is still on register page")
