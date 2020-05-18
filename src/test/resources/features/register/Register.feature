@@ -28,7 +28,7 @@ Feature: Register
     Examples:
       | phoneNumber | fullName             | email                      | password         | confirmPassword  | pin    |
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
-      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
+#      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
 
   @Positive @Email @LogoutHookR @DeleteHook
   Scenario Outline: Register through email verification with valid inputs
