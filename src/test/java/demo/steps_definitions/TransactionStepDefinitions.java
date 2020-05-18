@@ -103,13 +103,9 @@ public class TransactionStepDefinitions {
     @Then("User transaction is not processed")
     public void userTransactionIsNotProcessed() {
         dataPackagePage.waitABit(5000);
-        try {
-            Response response = UserController.getTransactionHistory(userPhoneNumber);
-            newLastTransactionId = response.getBody().path("history.last().idtransaksi");
-            Assert.assertEquals(lastTransactionId, newLastTransactionId);
-        } catch (Exception e) {
-            Assert.assertFalse(false);
-        }
+        Response response = UserController.getTransactionHistory(userPhoneNumber);
+        newLastTransactionId = response.getBody().path("history.last().idtransaksi");
+        Assert.assertEquals(lastTransactionId, newLastTransactionId);
     }
 
     @Then("User cannot see data package list on data package page")
