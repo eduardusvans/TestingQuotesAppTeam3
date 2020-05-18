@@ -23,6 +23,8 @@ public class TransactionStepDefinitions {
     String userPhoneNumber = getUserPhoneNumber();
     String chosenPhoneNumber;
     int chosenDataPackage;
+    int lastTransactionId;
+    int newLastTransactionId;
 
 
     @When("User click data package on transaction column on home page")
@@ -79,16 +81,20 @@ public class TransactionStepDefinitions {
 
     @When("User click pay now button on transaction pop up window")
     public void userClickPayNowButtonOnTransactionPopUpWindow() {
+        Response response = UserController.getTransactionHistory(userPhoneNumber);
+        lastTransactionId = response.getBody().path("history.last().idtransaksi");
         dataPackagePage.clickChooseMethodButton();
     }
 
     @Then("User transaction is success")
     public void userTransactionIsSuccess() {
-        dataPackagePage.waitABit(3000);
+        dataPackagePage.waitABit(5000);
         Response response = UserController.getTransactionHistory(userPhoneNumber);
+        newLastTransactionId = response.getBody().path("history.last().idtransaksi");
         String actualChosenNumber = response.getBody().path("history.last().nomorPaketData");
         int actualPriceTag = response.getBody().path("history.last().harga");
         String transactionStatus = response.getBody().path("history.last().message");
+        Assert.assertNotEquals(lastTransactionId, newLastTransactionId);
         Assert.assertEquals(String.format("+62%s", chosenPhoneNumber), actualChosenNumber);
         Assert.assertEquals(chosenDataPackage, actualPriceTag);
         Assert.assertEquals("Transaction successfully", transactionStatus);
@@ -96,11 +102,11 @@ public class TransactionStepDefinitions {
 
     @Then("User transaction is not processed")
     public void userTransactionIsNotProcessed() {
-        dataPackagePage.waitABit(3000);
+        dataPackagePage.waitABit(5000);
         try {
             Response response = UserController.getTransactionHistory(userPhoneNumber);
-            boolean paymentStatus = response.getBody().path("history.last().statusPembayaran");
-            Assert.assertNotEquals(false, paymentStatus);
+            newLastTransactionId = response.getBody().path("history.last().idtransaksi");
+            Assert.assertEquals(lastTransactionId, newLastTransactionId);
         } catch (Exception e) {
             Assert.assertFalse(false);
         }
