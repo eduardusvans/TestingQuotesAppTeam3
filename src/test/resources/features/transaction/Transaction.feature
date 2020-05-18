@@ -73,7 +73,7 @@ Feature: Transaction
     Then User transaction is not processed
 
   @Negative @LogoutHookL @UnknownChosenPhoneNumber
-  Scenario: Buy data package for valid phone number through wallet payment but not enough balance
+  Scenario: Buy data package for unknown phone number through wallet payment
     Given User is on Quotes Landing page
     And User click login to account button on landing page
     And User is on login page
