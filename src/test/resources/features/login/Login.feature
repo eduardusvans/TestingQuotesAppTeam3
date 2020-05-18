@@ -16,7 +16,7 @@ Feature: Login
       | phoneNumber | password        |
       | 87722041553 | Bilalelbari111! |
 
-  @Negative
+  @Negative @LogoutHookL
   Scenario Outline: Login with unregistered phone number, or invalid one of the input
     Given User is on Quotes Landing page
     When User click login to account button on landing page
