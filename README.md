@@ -18,3 +18,6 @@ For our documentation files regarding TEAM 3 DANApprenTech Final Project :
 
 https://drive.google.com/drive/folders/1fn1Vz-rRa-_kzbnE0yPrv0ofewEfFmHl?usp=sharing
 
+our PPT:
+https://drive.google.com/file/d/16zwxLoQqB0TN4IwR8QMgPNkAQb8mE4EV/view?usp=sharing
+
