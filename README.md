@@ -11,3 +11,10 @@ Eduardus Vans Arderito EDP-044
 Please contact us before you do the testing, because our Heroku server sometimes wipe our testing data.
 
 Thank you
+
+
+Note :
+For our documentation files regarding TEAM 3 DANApprenTech Final Project :
+
+https://drive.google.com/drive/folders/1fn1Vz-rRa-_kzbnE0yPrv0ofewEfFmHl?usp=sharing
+
