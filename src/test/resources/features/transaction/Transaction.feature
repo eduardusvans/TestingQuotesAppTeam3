@@ -26,8 +26,8 @@ Feature: Transaction
 
     Examples:
       | chosenPhoneNumber | chosenPrice | pin    |
-#      | 81290137272       | Rp25.000    | 345678 |
-#      | 81290137272       | Rp80.000    | 345678 |
+      | 81290137272       | Rp25.000    | 345678 |
+      | 81290137272       | Rp80.000    | 345678 |
       | 81290137272       | Rp89.000    | 345678 |
 
   @Negative @LogoutHookL @NotEnough

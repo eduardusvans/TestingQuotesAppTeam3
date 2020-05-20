@@ -32,18 +32,18 @@ Feature: Login
       # wrong password
       | 87722041553 | Bilalelbari123! |
 
-#  @Negative @All @LogoutHookL
-#  Scenario Outline: Login with unregistered phone number and invalid password input
-#    Given User is on Quotes Landing page
-#    When User click login to account button on landing page
-#    And User is on login page
-#    And User input "<phoneNumber>" on phone number input field on login page
-#    And User input "<password>" on password input field on login page
-#    And User click login to account button on login page
-#    Then User is still on login page
-#    Examples:
-#      | phoneNumber | password        |
-#      # all wrong phone number
-#      | 89695966514 | Bilalelbari123! |
+  @Negative @All @LogoutHookL
+  Scenario Outline: Login with unregistered phone number and invalid password input
+    Given User is on Quotes Landing page
+    When User click login to account button on landing page
+    And User is on login page
+    And User input "<phoneNumber>" on phone number input field on login page
+    And User input "<password>" on password input field on login page
+    And User click login to account button on login page
+    Then User is still on login page
+    Examples:
+      | phoneNumber | password        |
+      # all wrong phone number
+      | 89695966514 | Bilalelbari123! |
 
 

@@ -28,7 +28,7 @@ Feature: Register
     Examples:
       | phoneNumber | fullName             | email                      | password         | confirmPassword  | pin    |
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
-#      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
+      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
 
   @Positive @Email @LogoutHookR @DeleteHook
   Scenario Outline: Register through email verification with valid inputs
@@ -52,7 +52,7 @@ Feature: Register
     Examples:
       | phoneNumber | fullName             | email                      | password         | confirmPassword  | pin    |
       | 89695966514 | abc                  | testingregister3@gmail.com | Abcdef1!         | Abcdef1!         | 123456 |
-#      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
+      | 89695966514 | abcdefghijklmnopqrst | testingregister3@gmail.com | Abcdefghijklmn1! | Abcdefghijklmn1! | 123456 |
 
   @Negative @Single
   Scenario Outline: Register an account with one of the input is invalid
@@ -86,22 +86,22 @@ Feature: Register
       # Pin number is not 6 characters
       | 89695966514 | abc      | testingregister3@gmail.com | Abcdef1! | Abcdef1!         | 12345  |
 
-#  @Negative @All
-#  Scenario Outline: Register an account with all of the input is invalid
-#    Given User is on Quotes Landing page
-#    When User click create account button on landing page
-#    And User is on register page
-#    And User input "<phoneNumber>" on phone number input field on register page
-#    And User input "<fullName>" on full name input field on register page
-#    And User input "<email>" on email input field on register page
-#    And User input "<password>" on password input field on register page
-#    And User input "<confirmPassword>" on confirm password input field on register page
-#    And User input "<pin>" on pin input field on register page
-#    And User click create account button on register page
-#    Then User don't see the verification method window on register page
-#    And User is still on register page
-#
-#    Examples:
-#      | phoneNumber | fullName | email            | password | confirmPassword  | pin   |
-#      # all wrong
-#      | 89695966514 | ab       | testingregister3 | Abcde1!  | Abcdefghijklmn1! | 12345 |
+  @Negative @All
+  Scenario Outline: Register an account with all of the input is invalid
+    Given User is on Quotes Landing page
+    When User click create account button on landing page
+    And User is on register page
+    And User input "<phoneNumber>" on phone number input field on register page
+    And User input "<fullName>" on full name input field on register page
+    And User input "<email>" on email input field on register page
+    And User input "<password>" on password input field on register page
+    And User input "<confirmPassword>" on confirm password input field on register page
+    And User input "<pin>" on pin input field on register page
+    And User click create account button on register page
+    Then User don't see the verification method window on register page
+    And User is still on register page
+
+    Examples:
+      | phoneNumber | fullName | email            | password | confirmPassword  | pin   |
+      # all wrong
+      | 89695966514 | ab       | testingregister3 | Abcde1!  | Abcdefghijklmn1! | 12345 |
